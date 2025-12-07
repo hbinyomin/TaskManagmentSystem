@@ -1,0 +1,22 @@
+# Build output
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+
+# VS user-specific files
+*.suo
+*.user
+.vs/
+
+# Local database files
+*.mdf
+*.ldf
+
+# NuGet packages
+**/[Pp]ackages/*
+
+# Logs & temp
+*.log
+[Ll]ogs/
+*.tmp
