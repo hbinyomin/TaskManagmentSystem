@@ -27,18 +27,34 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            tasksDataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)tasksDataGridView1).BeginInit();
             SuspendLayout();
+            // 
+            // tasksDataGridView1
+            // 
+            tasksDataGridView1.BackgroundColor = SystemColors.ControlLight;
+            tasksDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tasksDataGridView1.Dock = DockStyle.Fill;
+            tasksDataGridView1.Location = new Point(0, 0);
+            tasksDataGridView1.Name = "tasksDataGridView1";
+            tasksDataGridView1.Size = new Size(800, 450);
+            tasksDataGridView1.TabIndex = 0;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(tasksDataGridView1);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)tasksDataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView tasksDataGridView1;
     }
 }
