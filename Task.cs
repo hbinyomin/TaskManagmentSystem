@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace TaskManagmentSystem {
-    internal class Task {
+    public class Task {
         public int Id {
             get; set;
         }
@@ -20,5 +20,12 @@ namespace TaskManagmentSystem {
 
         public Task() {
         }
+        //public Task(string taskTitle, string description, DateTime dueDate, int priorityLevel) {
+        public Task(string taskTitle, string description) {
+            this.Title = taskTitle;
+            this.Description = description;
+        }
+
+
     }
 }
