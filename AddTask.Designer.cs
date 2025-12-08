@@ -110,7 +110,8 @@ namespace TaskManagmentSystem {
             // 
             priorityComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             priorityComboBox1.FormattingEnabled = true;
-            priorityComboBox1.Items.AddRange(new object[] { "Low", "Medium", "High", "Critical" });
+            priorityComboBox1.DataSource = Enum.GetValues(typeof(Priority));
+            priorityComboBox1.SelectedIndex = -1;
             priorityComboBox1.Location = new Point(44, 148);
             priorityComboBox1.Name = "priorityComboBox1";
             priorityComboBox1.Size = new Size(200, 23);

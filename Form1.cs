@@ -14,7 +14,7 @@ namespace TaskManagmentSystem{
         }
 
         private void filterByPriority_Click(object sender, EventArgs e) {
-            int priority = priorityPickerFilter.SelectedIndex;
+            Priority priority = (Priority)priorityPickerFilter.SelectedIndex;
             using (var context = new TaskDbContext()) {
                 var taskList = context.Tasks.Where(t => t.PriorityLevel == priority).ToList();
                 loadGrid(tasksDataGridView1, taskList);
@@ -45,20 +45,19 @@ namespace TaskManagmentSystem{
             }
         }
 
-
         //helper functions
-
-        public void loadGrid(DataGridView grid, List<Task> taskList) {
-            tasksDataGridView1.DataSource = taskList;
-            tasksDataGridView1.Columns["Id"]?.Visible = false;
-        }
 
         public void LoadTasks() {
             using (var context = new TaskDbContext()) {
                 var taskList = context.Tasks.ToList();
-                //tasksDataGridView1.DataSource = ;
                 loadGrid(tasksDataGridView1, taskList);
             }
+        }
+        
+        public void loadGrid(DataGridView grid, List<Task> taskList) {
+            tasksDataGridView1.DataSource = taskList;
+            tasksDataGridView1.Columns["Id"]?.Visible = false;
+            tasksDataGridView1.ClearSelection();
         }
     }
 }

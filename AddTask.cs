@@ -22,7 +22,6 @@ namespace TaskManagmentSystem {
                 string? taskTitle = string.IsNullOrWhiteSpace(titleTextBox.Text) ? null : titleTextBox.Text;
                 string? taskDescription = string.IsNullOrWhiteSpace(descriptionTextBox.Text) ? null : descriptionTextBox.Text;
                 DateTime date = dueDatePicker1.Value;
-                int priority = priorityComboBox1.SelectedIndex;
 
                 if (taskTitle == null) {
                     MessageBox.Show("You must assign a title to a task");
@@ -33,7 +32,7 @@ namespace TaskManagmentSystem {
                     return;
                 }
 
-                if (priority < 0) {
+                if (priorityComboBox1.SelectedItem==null) {
                     MessageBox.Show("You must assign a priority to a task");
                     return;
                 }
@@ -42,6 +41,9 @@ namespace TaskManagmentSystem {
                     MessageBox.Show("You must assign a date to a task");
                     return;
                 }
+
+                //At this point, selectedItem is not null
+                Priority priority = (Priority)priorityComboBox1.SelectedItem;
 
                 try {
                     Task task = new Task(taskTitle: taskTitle, description: taskDescription, dueDate: date, priorityLevel: priority);
