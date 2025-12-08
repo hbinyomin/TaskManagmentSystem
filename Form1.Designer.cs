@@ -1,4 +1,6 @@
-﻿namespace TaskManagmentSystem
+﻿using System.Windows.Forms;
+
+namespace TaskManagmentSystem
 {
     partial class TaskListForm
     {
@@ -36,11 +38,11 @@
             label4 = new Label();
             priorityPickerFilter = new ComboBox();
             label3 = new Label();
-            label2 = new Label();
             comboBox1 = new ComboBox();
             label1 = new Label();
             applyFiltlerButton = new Button();
             addTaskButton = new Button();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)tasksDataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -49,25 +51,28 @@
             tasksDataGridView1.BackgroundColor = SystemColors.ControlLight;
             tasksDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tasksDataGridView1.Dock = DockStyle.Bottom;
-            tasksDataGridView1.Location = new Point(0, 159);
+            tasksDataGridView1.Location = new Point(0, 197);
             tasksDataGridView1.Name = "tasksDataGridView1";
             tasksDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             tasksDataGridView1.Size = new Size(948, 369);
             tasksDataGridView1.TabIndex = 0;
             tasksDataGridView1.CellContentClick += tasksDataGridView1_CellContentClick;
+            tasksDataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+
             // 
             // deleteButton
             // 
-            deleteButton.Location = new Point(19, 71);
+            deleteButton.Location = new Point(25, 115);
             deleteButton.Name = "deleteButton";
-            deleteButton.Size = new Size(88, 23);
+            deleteButton.Size = new Size(88, 29);
             deleteButton.TabIndex = 26;
             deleteButton.Text = "Delete Task";
             deleteButton.UseVisualStyleBackColor = true;
             // 
             // clearFilterButton
             // 
-            clearFilterButton.Location = new Point(472, 114);
+            clearFilterButton.Location = new Point(478, 158);
             clearFilterButton.Name = "clearFilterButton";
             clearFilterButton.Size = new Size(102, 23);
             clearFilterButton.TabIndex = 25;
@@ -76,7 +81,7 @@
             // 
             // filterByDate
             // 
-            filterByDate.Location = new Point(376, 76);
+            filterByDate.Location = new Point(382, 120);
             filterByDate.Name = "filterByDate";
             filterByDate.Size = new Size(114, 23);
             filterByDate.TabIndex = 24;
@@ -85,7 +90,7 @@
             // 
             // filterByPriority
             // 
-            filterByPriority.Location = new Point(232, 76);
+            filterByPriority.Location = new Point(238, 120);
             filterByPriority.Name = "filterByPriority";
             filterByPriority.Size = new Size(120, 24);
             filterByPriority.TabIndex = 23;
@@ -94,7 +99,7 @@
             // 
             // datePickerFilter
             // 
-            datePickerFilter.Location = new Point(376, 47);
+            datePickerFilter.Location = new Point(382, 91);
             datePickerFilter.MinDate = new DateTime(2025, 12, 8, 0, 0, 10, 0);
             datePickerFilter.Name = "datePickerFilter";
             datePickerFilter.Size = new Size(198, 23);
@@ -104,7 +109,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(376, 29);
+            label4.Location = new Point(382, 73);
             label4.Name = "label4";
             label4.Size = new Size(55, 15);
             label4.TabIndex = 21;
@@ -114,7 +119,7 @@
             // 
             priorityPickerFilter.FormattingEnabled = true;
             priorityPickerFilter.Items.AddRange(new object[] { "Low", "Medium", "High", "Critical" });
-            priorityPickerFilter.Location = new Point(233, 47);
+            priorityPickerFilter.Location = new Point(239, 91);
             priorityPickerFilter.Name = "priorityPickerFilter";
             priorityPickerFilter.Size = new Size(87, 23);
             priorityPickerFilter.TabIndex = 20;
@@ -122,26 +127,16 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(233, 29);
+            label3.Location = new Point(239, 73);
             label3.Name = "label3";
             label3.Size = new Size(45, 15);
             label3.TabIndex = 19;
             label3.Text = "Priority";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(306, 6);
-            label2.Name = "label2";
-            label2.Size = new Size(66, 21);
-            label2.TabIndex = 18;
-            label2.Text = "Filter By";
-            // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(720, 71);
+            comboBox1.Location = new Point(726, 115);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 17;
@@ -149,16 +144,16 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(731, 25);
+            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(737, 69);
             label1.Name = "label1";
-            label1.Size = new Size(60, 21);
+            label1.Size = new Size(56, 20);
             label1.TabIndex = 16;
             label1.Text = "Sort By";
             // 
             // applyFiltlerButton
             // 
-            applyFiltlerButton.Location = new Point(847, 70);
+            applyFiltlerButton.Location = new Point(853, 114);
             applyFiltlerButton.Name = "applyFiltlerButton";
             applyFiltlerButton.Size = new Size(75, 23);
             applyFiltlerButton.TabIndex = 15;
@@ -167,18 +162,29 @@
             // 
             // addTaskButton
             // 
-            addTaskButton.Location = new Point(19, 32);
+            addTaskButton.Location = new Point(25, 76);
             addTaskButton.Name = "addTaskButton";
             addTaskButton.Size = new Size(88, 26);
             addTaskButton.TabIndex = 14;
             addTaskButton.Text = "Add Task";
             addTaskButton.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(382, 9);
+            label5.Name = "label5";
+            label5.Size = new Size(172, 32);
+            label5.TabIndex = 27;
+            label5.Text = "Task Manager";
+            // 
             // TaskListForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(948, 528);
+            ClientSize = new Size(948, 566);
+            Controls.Add(label5);
             Controls.Add(deleteButton);
             Controls.Add(clearFilterButton);
             Controls.Add(filterByDate);
@@ -187,7 +193,6 @@
             Controls.Add(label4);
             Controls.Add(priorityPickerFilter);
             Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(comboBox1);
             Controls.Add(label1);
             Controls.Add(applyFiltlerButton);
@@ -211,10 +216,10 @@
         private Label label4;
         private ComboBox priorityPickerFilter;
         private Label label3;
-        private Label label2;
         private ComboBox comboBox1;
         private Label label1;
         private Button applyFiltlerButton;
         private Button addTaskButton;
+        private Label label5;
     }
 }

@@ -56,6 +56,12 @@ namespace TaskManagmentSystem{
 
         public void loadGrid(DataGridView grid, List<Task> taskList) {
             tasksDataGridView1.DataSource = taskList;
+            tasksDataGridView1.Columns["PriorityLevel"]?.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            tasksDataGridView1.Columns["PriorityLevel"]?.Width = 110;
+            tasksDataGridView1.Columns["DueDate"]?.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            tasksDataGridView1.Columns["DueDate"]?.Width = 130;
+            tasksDataGridView1.Columns["Title"]?.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            tasksDataGridView1.Columns["Title"]?.Width = 180;
             tasksDataGridView1.Columns["Id"]?.Visible = false;
             tasksDataGridView1.ClearSelection();
         }
