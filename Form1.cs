@@ -10,7 +10,7 @@ namespace TaskManagmentSystem{
         }
 
         private void addTaskButton_Click(object sender, EventArgs e) {
-            new AddTask(this).ShowDialog();
+            new AddTaskForm(this).ShowDialog();
         }
 
         private void filterByPriority_Click(object sender, EventArgs e) {
@@ -36,13 +36,27 @@ namespace TaskManagmentSystem{
 
         private void clearFilterButton_Click(object sender, EventArgs e) {
             this.LoadTasks();
-            //Clear filter text use helper functino
+            //Add here to clear filter text use helper function...
         }
 
         private void deleteButton_Click(object sender, EventArgs e) {
             var rowTask = tasksDataGridView1.CurrentRow?.DataBoundItem as Task;
             if (rowTask != null) {
                 using (var context = new TaskDbContext()) {
+                    var taskList = context.Tasks.Remove(rowTask);
+                    context.SaveChanges();
+                    MessageBox.Show("Task was deleted successfully");
+                    LoadTasks();
+                }
+            }
+        }
+
+        private void editTaskButton_Click(object sender, EventArgs e) {
+            var rowTask = tasksDataGridView1.CurrentRow?.DataBoundItem as Task;
+            if (rowTask != null) {
+                new UpdateForm(this);
+                using (var context = new TaskDbContext()) {
+
                     var taskList = context.Tasks.Remove(rowTask);
                     context.SaveChanges();
                     MessageBox.Show("Task was deleted successfully");
@@ -75,5 +89,7 @@ namespace TaskManagmentSystem{
         private void datePickerFilter_ValueChanged(object sender, EventArgs e) {
             datePickerFilter.Format = DateTimePickerFormat.Long;
         }
+
+       
     }
 }

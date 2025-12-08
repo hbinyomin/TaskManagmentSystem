@@ -43,6 +43,7 @@ namespace TaskManagmentSystem
             applyFiltlerButton = new Button();
             addTaskButton = new Button();
             label5 = new Label();
+            editTaskButton = new Button();
             ((System.ComponentModel.ISupportInitialize)tasksDataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -60,7 +61,7 @@ namespace TaskManagmentSystem
             // 
             // deleteButton
             // 
-            deleteButton.Location = new Point(25, 115);
+            deleteButton.Location = new Point(25, 110);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(88, 29);
             deleteButton.TabIndex = 26;
@@ -184,11 +185,22 @@ namespace TaskManagmentSystem
             label5.TabIndex = 27;
             label5.Text = "Task Manager";
             // 
+            // editTaskButton
+            // 
+            editTaskButton.Location = new Point(25, 150);
+            editTaskButton.Name = "editTaskButton";
+            editTaskButton.Size = new Size(88, 28);
+            editTaskButton.TabIndex = 28;
+            editTaskButton.Text = "Edit Task";
+            editTaskButton.UseVisualStyleBackColor = true;
+            editTaskButton.Click += editTaskButton_Click;
+            // 
             // TaskListForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(948, 566);
+            Controls.Add(editTaskButton);
             Controls.Add(label5);
             Controls.Add(deleteButton);
             Controls.Add(clearFilterButton);
@@ -204,7 +216,7 @@ namespace TaskManagmentSystem
             Controls.Add(addTaskButton);
             Controls.Add(tasksDataGridView1);
             Name = "TaskListForm";
-            Text = "Tasks";
+            Text = "Task Manager";
             ((System.ComponentModel.ISupportInitialize)tasksDataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -226,5 +238,6 @@ namespace TaskManagmentSystem
         private Button applyFiltlerButton;
         private Button addTaskButton;
         private Label label5;
+        private Button editTaskButton;
     }
 }
