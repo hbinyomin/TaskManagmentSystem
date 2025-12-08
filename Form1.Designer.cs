@@ -1,6 +1,6 @@
 ﻿namespace TaskManagmentSystem
 {
-    partial class Form1
+    partial class TaskListForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent() {
             tasksDataGridView1 = new DataGridView();
+            addTaskButton = new Button();
             ((System.ComponentModel.ISupportInitialize)tasksDataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -35,20 +36,31 @@
             // 
             tasksDataGridView1.BackgroundColor = SystemColors.ControlLight;
             tasksDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tasksDataGridView1.Dock = DockStyle.Fill;
+            tasksDataGridView1.Dock = DockStyle.Top;
             tasksDataGridView1.Location = new Point(0, 0);
             tasksDataGridView1.Name = "tasksDataGridView1";
             tasksDataGridView1.Size = new Size(800, 450);
             tasksDataGridView1.TabIndex = 0;
             // 
-            // Form1
+            // addTaskButton
+            // 
+            addTaskButton.Location = new Point(34, 480);
+            addTaskButton.Name = "addTaskButton";
+            addTaskButton.Size = new Size(75, 23);
+            addTaskButton.TabIndex = 1;
+            addTaskButton.Text = "Add Task";
+            addTaskButton.UseVisualStyleBackColor = true;
+            addTaskButton.Click += addTaskButton_Click;
+            // 
+            // taskListForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 515);
+            Controls.Add(addTaskButton);
             Controls.Add(tasksDataGridView1);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "taskListForm";
+            Text = "Tasks";
             ((System.ComponentModel.ISupportInitialize)tasksDataGridView1).EndInit();
             ResumeLayout(false);
         }
@@ -56,5 +68,6 @@
         #endregion
 
         private DataGridView tasksDataGridView1;
+        private Button addTaskButton;
     }
 }

@@ -9,7 +9,9 @@ using System.Windows.Forms;
 
 namespace TaskManagmentSystem {
     public partial class AddTask : Form {
-        public AddTask() {
+        TaskListForm mainForm;
+        public AddTask(TaskListForm mainForm) {
+            this.mainForm = mainForm;
             InitializeComponent();
         }
 
@@ -24,7 +26,9 @@ namespace TaskManagmentSystem {
                     int changes = context.SaveChanges();
 
                     if (changes > 0) {
+                        this.mainForm.LoadTasks();
                         MessageBox.Show("The task was added successfully");
+                        this.Close();
                     }
                 }
                 catch (SqlException ex) {

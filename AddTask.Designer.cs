@@ -28,6 +28,10 @@
             titleTextBox = new TextBox();
             descriptionTextBox = new TextBox();
             label3 = new Label();
+            priorityLabel = new Label();
+            dueDatePicker1 = new DateTimePicker();
+            dueDateLabel = new Label();
+            priorityComboBox1 = new ComboBox();
             SuspendLayout();
             // 
             // label2
@@ -41,7 +45,7 @@
             // 
             // addTaskButton
             // 
-            addTaskButton.Location = new Point(80, 209);
+            addTaskButton.Location = new Point(80, 277);
             addTaskButton.Name = "addTaskButton";
             addTaskButton.Size = new Size(127, 36);
             addTaskButton.TabIndex = 3;
@@ -60,7 +64,7 @@
             // 
             descriptionTextBox.Location = new Point(82, 128);
             descriptionTextBox.Name = "descriptionTextBox";
-            descriptionTextBox.Size = new Size(243, 23);
+            descriptionTextBox.Size = new Size(203, 23);
             descriptionTextBox.TabIndex = 7;
             // 
             // label3
@@ -72,11 +76,50 @@
             label3.TabIndex = 8;
             label3.Text = "Description";
             // 
+            // priorityLabel
+            // 
+            priorityLabel.AutoSize = true;
+            priorityLabel.Location = new Point(85, 166);
+            priorityLabel.Name = "priorityLabel";
+            priorityLabel.Size = new Size(45, 15);
+            priorityLabel.TabIndex = 9;
+            priorityLabel.Text = "Priority";
+            // 
+            // dueDatePicker1
+            // 
+            dueDatePicker1.Location = new Point(85, 237);
+            dueDatePicker1.Name = "dueDatePicker1";
+            dueDatePicker1.Size = new Size(200, 23);
+            dueDatePicker1.TabIndex = 10;
+            // 
+            // dueDateLabel
+            // 
+            dueDateLabel.AutoSize = true;
+            dueDateLabel.Location = new Point(85, 219);
+            dueDateLabel.Name = "dueDateLabel";
+            dueDateLabel.Size = new Size(55, 15);
+            dueDateLabel.TabIndex = 11;
+            dueDateLabel.Text = "Due Date";
+            // 
+            // priorityComboBox1
+            // 
+            priorityComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            priorityComboBox1.FormattingEnabled = true;
+            priorityComboBox1.Items.AddRange(new object[] { "Low", "Medium", "High", "Critical" });
+            priorityComboBox1.Location = new Point(85, 184);
+            priorityComboBox1.Name = "priorityComboBox1";
+            priorityComboBox1.Size = new Size(200, 23);
+            priorityComboBox1.TabIndex = 12;
+            // 
             // AddTask
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(407, 450);
+            Controls.Add(priorityComboBox1);
+            Controls.Add(dueDateLabel);
+            Controls.Add(dueDatePicker1);
+            Controls.Add(priorityLabel);
             Controls.Add(label3);
             Controls.Add(descriptionTextBox);
             Controls.Add(titleTextBox);
@@ -95,5 +138,9 @@
         private TextBox titleTextBox;
         private TextBox descriptionTextBox;
         private Label label3;
+        private Label priorityLabel;
+        private DateTimePicker dueDatePicker1;
+        private Label dueDateLabel;
+        private ComboBox priorityComboBox1;
     }
 }
