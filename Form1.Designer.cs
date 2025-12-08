@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent() {
             tasksDataGridView1 = new DataGridView();
-            addTaskButton = new Button();
-            applyFiltlerButton = new Button();
-            label1 = new Label();
-            comboBox1 = new ComboBox();
-            label2 = new Label();
-            label3 = new Label();
-            priorityPickerFilter = new ComboBox();
-            label4 = new Label();
-            datePickerFilter = new DateTimePicker();
-            filterByPriority = new Button();
-            filterByDate = new Button();
-            clearFilterButton = new Button();
             deleteButton = new Button();
+            clearFilterButton = new Button();
+            filterByDate = new Button();
+            filterByPriority = new Button();
+            datePickerFilter = new DateTimePicker();
+            label4 = new Label();
+            priorityPickerFilter = new ComboBox();
+            label3 = new Label();
+            label2 = new Label();
+            comboBox1 = new ComboBox();
+            label1 = new Label();
+            applyFiltlerButton = new Button();
+            addTaskButton = new Button();
             ((System.ComponentModel.ISupportInitialize)tasksDataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -48,141 +48,137 @@
             // 
             tasksDataGridView1.BackgroundColor = SystemColors.ControlLight;
             tasksDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tasksDataGridView1.Dock = DockStyle.Top;
-            tasksDataGridView1.Location = new Point(0, 0);
+            tasksDataGridView1.Dock = DockStyle.Bottom;
+            tasksDataGridView1.Location = new Point(0, 159);
             tasksDataGridView1.Name = "tasksDataGridView1";
             tasksDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            tasksDataGridView1.Size = new Size(800, 367);
+            tasksDataGridView1.Size = new Size(948, 369);
             tasksDataGridView1.TabIndex = 0;
+            tasksDataGridView1.CellContentClick += tasksDataGridView1_CellContentClick;
             // 
-            // addTaskButton
+            // deleteButton
             // 
-            addTaskButton.Location = new Point(22, 402);
-            addTaskButton.Name = "addTaskButton";
-            addTaskButton.Size = new Size(75, 23);
-            addTaskButton.TabIndex = 1;
-            addTaskButton.Text = "Add Task";
-            addTaskButton.UseVisualStyleBackColor = true;
-            addTaskButton.Click += addTaskButton_Click;
+            deleteButton.Location = new Point(19, 71);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(88, 23);
+            deleteButton.TabIndex = 26;
+            deleteButton.Text = "Delete Task";
+            deleteButton.UseVisualStyleBackColor = true;
             // 
-            // applyFiltlerButton
+            // clearFilterButton
             // 
-            applyFiltlerButton.Location = new Point(705, 441);
-            applyFiltlerButton.Name = "applyFiltlerButton";
-            applyFiltlerButton.Size = new Size(75, 23);
-            applyFiltlerButton.TabIndex = 2;
-            applyFiltlerButton.Text = "Apply";
-            applyFiltlerButton.UseVisualStyleBackColor = true;
+            clearFilterButton.Location = new Point(472, 114);
+            clearFilterButton.Name = "clearFilterButton";
+            clearFilterButton.Size = new Size(102, 23);
+            clearFilterButton.TabIndex = 25;
+            clearFilterButton.Text = "Clear Filters";
+            clearFilterButton.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // filterByDate
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(589, 396);
-            label1.Name = "label1";
-            label1.Size = new Size(60, 21);
-            label1.TabIndex = 3;
-            label1.Text = "Sort By";
+            filterByDate.Location = new Point(376, 76);
+            filterByDate.Name = "filterByDate";
+            filterByDate.Size = new Size(114, 23);
+            filterByDate.TabIndex = 24;
+            filterByDate.Text = "Filter By Date";
+            filterByDate.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // filterByPriority
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(578, 442);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 4;
+            filterByPriority.Location = new Point(232, 76);
+            filterByPriority.Name = "filterByPriority";
+            filterByPriority.Size = new Size(120, 24);
+            filterByPriority.TabIndex = 23;
+            filterByPriority.Text = "Filter By Priority";
+            filterByPriority.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // datePickerFilter
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(236, 376);
-            label2.Name = "label2";
-            label2.Size = new Size(66, 21);
-            label2.TabIndex = 5;
-            label2.Text = "Filter By";
+            datePickerFilter.Location = new Point(376, 47);
+            datePickerFilter.MinDate = new DateTime(2025, 12, 8, 0, 0, 10, 0);
+            datePickerFilter.Name = "datePickerFilter";
+            datePickerFilter.Size = new Size(198, 23);
+            datePickerFilter.TabIndex = 22;
+            datePickerFilter.Value = new DateTime(2025, 12, 25, 23, 59, 59, 0);
             // 
-            // label3
+            // label4
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(156, 409);
-            label3.Name = "label3";
-            label3.Size = new Size(45, 15);
-            label3.TabIndex = 6;
-            label3.Text = "Priority";
+            label4.AutoSize = true;
+            label4.Location = new Point(376, 29);
+            label4.Name = "label4";
+            label4.Size = new Size(55, 15);
+            label4.TabIndex = 21;
+            label4.Text = "Due Date";
             // 
             // priorityPickerFilter
             // 
             priorityPickerFilter.FormattingEnabled = true;
             priorityPickerFilter.Items.AddRange(new object[] { "Low", "Medium", "High", "Critical" });
-            priorityPickerFilter.Location = new Point(156, 427);
+            priorityPickerFilter.Location = new Point(233, 47);
             priorityPickerFilter.Name = "priorityPickerFilter";
-            priorityPickerFilter.Size = new Size(45, 23);
-            priorityPickerFilter.TabIndex = 7;
+            priorityPickerFilter.Size = new Size(87, 23);
+            priorityPickerFilter.TabIndex = 20;
             // 
-            // label4
+            // label3
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(299, 409);
-            label4.Name = "label4";
-            label4.Size = new Size(55, 15);
-            label4.TabIndex = 8;
-            label4.Text = "Due Date";
+            label3.AutoSize = true;
+            label3.Location = new Point(233, 29);
+            label3.Name = "label3";
+            label3.Size = new Size(45, 15);
+            label3.TabIndex = 19;
+            label3.Text = "Priority";
             // 
-            // datePickerFilter
+            // label2
             // 
-            datePickerFilter.Location = new Point(299, 427);
-            datePickerFilter.MinDate = new DateTime(2025, 12, 8, 0, 0, 10, 0);
-            datePickerFilter.Name = "datePickerFilter";
-            datePickerFilter.Size = new Size(198, 23);
-            datePickerFilter.TabIndex = 9;
-            datePickerFilter.Value = new DateTime(2025, 12, 25, 23, 59, 59, 0);
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(306, 6);
+            label2.Name = "label2";
+            label2.Size = new Size(66, 21);
+            label2.TabIndex = 18;
+            label2.Text = "Filter By";
             // 
-            // filterByPriority
+            // comboBox1
             // 
-            filterByPriority.Location = new Point(155, 456);
-            filterByPriority.Name = "filterByPriority";
-            filterByPriority.Size = new Size(120, 24);
-            filterByPriority.TabIndex = 10;
-            filterByPriority.Text = "Filter By Priority";
-            filterByPriority.UseVisualStyleBackColor = true;
-            filterByPriority.Click += filterByPriority_Click;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(720, 71);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 17;
             // 
-            // filterByDate
+            // label1
             // 
-            filterByDate.Location = new Point(299, 456);
-            filterByDate.Name = "filterByDate";
-            filterByDate.Size = new Size(114, 23);
-            filterByDate.TabIndex = 11;
-            filterByDate.Text = "Filter By Date";
-            filterByDate.UseVisualStyleBackColor = true;
-            filterByDate.Click += filterByDate_Click;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(731, 25);
+            label1.Name = "label1";
+            label1.Size = new Size(60, 21);
+            label1.TabIndex = 16;
+            label1.Text = "Sort By";
             // 
-            // clearFilterButton
+            // applyFiltlerButton
             // 
-            clearFilterButton.Location = new Point(395, 487);
-            clearFilterButton.Name = "clearFilterButton";
-            clearFilterButton.Size = new Size(102, 23);
-            clearFilterButton.TabIndex = 12;
-            clearFilterButton.Text = "Clear Filters";
-            clearFilterButton.UseVisualStyleBackColor = true;
-            clearFilterButton.Click += clearFilterButton_Click;
+            applyFiltlerButton.Location = new Point(847, 70);
+            applyFiltlerButton.Name = "applyFiltlerButton";
+            applyFiltlerButton.Size = new Size(75, 23);
+            applyFiltlerButton.TabIndex = 15;
+            applyFiltlerButton.Text = "Apply";
+            applyFiltlerButton.UseVisualStyleBackColor = true;
             // 
-            // deleteButton
+            // addTaskButton
             // 
-            deleteButton.Location = new Point(27, 446);
-            deleteButton.Name = "deleteButton";
-            deleteButton.Size = new Size(75, 23);
-            deleteButton.TabIndex = 13;
-            deleteButton.Text = "Delete Selected Task";
-            deleteButton.UseVisualStyleBackColor = true;
-            deleteButton.Click += deleteButton_Click;
+            addTaskButton.Location = new Point(19, 32);
+            addTaskButton.Name = "addTaskButton";
+            addTaskButton.Size = new Size(88, 26);
+            addTaskButton.TabIndex = 14;
+            addTaskButton.Text = "Add Task";
+            addTaskButton.UseVisualStyleBackColor = true;
             // 
             // TaskListForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 515);
+            ClientSize = new Size(948, 528);
             Controls.Add(deleteButton);
             Controls.Add(clearFilterButton);
             Controls.Add(filterByDate);
@@ -207,18 +203,18 @@
         #endregion
 
         private DataGridView tasksDataGridView1;
-        private Button addTaskButton;
-        private Button applyFiltlerButton;
-        private Label label1;
-        private ComboBox comboBox1;
-        private Label label2;
-        private Label label3;
-        private ComboBox priorityPickerFilter;
-        private Label label4;
-        private DateTimePicker datePickerFilter;
-        private Button filterByPriority;
-        private Button filterByDate;
-        private Button clearFilterButton;
         private Button deleteButton;
+        private Button clearFilterButton;
+        private Button filterByDate;
+        private Button filterByPriority;
+        private DateTimePicker datePickerFilter;
+        private Label label4;
+        private ComboBox priorityPickerFilter;
+        private Label label3;
+        private Label label2;
+        private ComboBox comboBox1;
+        private Label label1;
+        private Button applyFiltlerButton;
+        private Button addTaskButton;
     }
 }

@@ -53,11 +53,15 @@ namespace TaskManagmentSystem{
                 loadGrid(tasksDataGridView1, taskList);
             }
         }
-        
+
         public void loadGrid(DataGridView grid, List<Task> taskList) {
             tasksDataGridView1.DataSource = taskList;
             tasksDataGridView1.Columns["Id"]?.Visible = false;
             tasksDataGridView1.ClearSelection();
+        }
+
+        private void tasksDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+
         }
     }
 }
