@@ -1,21 +1,9 @@
 using Microsoft.VisualBasic;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
-namespace TaskManagmentSystem
-{
+namespace TaskManagmentSystem{
     public partial class TaskListForm : Form {
-       
-        public void loadGrid(DataGridView grid, List<Task> taskList) {
-            tasksDataGridView1.DataSource = taskList;
-            tasksDataGridView1.Columns["Id"]?.Visible = false;
-        }
-        public void LoadTasks() {
-            using (var context = new TaskDbContext()) {
-                var taskList = context.Tasks.ToList();
-                //tasksDataGridView1.DataSource = ;
-                loadGrid(tasksDataGridView1, taskList);
-            }
-        }
+
         public TaskListForm() {
             InitializeComponent();
             LoadTasks();
@@ -48,12 +36,28 @@ namespace TaskManagmentSystem
         private void deleteButton_Click(object sender, EventArgs e) {
             var rowTask = tasksDataGridView1.CurrentRow?.DataBoundItem as Task;
             if (rowTask != null) {
-                Console.WriteLine("");
                 using (var context = new TaskDbContext()) {
                     var taskList = context.Tasks.Remove(rowTask);
                     context.SaveChanges();
+                    MessageBox.Show("Task was deleted successfully");
                     LoadTasks();
                 }
+            }
+        }
+
+
+        //helper functions
+
+        public void loadGrid(DataGridView grid, List<Task> taskList) {
+            tasksDataGridView1.DataSource = taskList;
+            tasksDataGridView1.Columns["Id"]?.Visible = false;
+        }
+
+        public void LoadTasks() {
+            using (var context = new TaskDbContext()) {
+                var taskList = context.Tasks.ToList();
+                //tasksDataGridView1.DataSource = ;
+                loadGrid(tasksDataGridView1, taskList);
             }
         }
     }

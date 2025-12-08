@@ -54,7 +54,6 @@
             tasksDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             tasksDataGridView1.Size = new Size(800, 367);
             tasksDataGridView1.TabIndex = 0;
-            tasksDataGridView1.CellClick += tasksDataGridView1_CellClick;
             // 
             // addTaskButton
             // 
@@ -133,9 +132,11 @@
             // datePickerFilter
             // 
             datePickerFilter.Location = new Point(299, 427);
+            datePickerFilter.MinDate = new DateTime(2025, 12, 8, 0, 0, 10, 0);
             datePickerFilter.Name = "datePickerFilter";
             datePickerFilter.Size = new Size(198, 23);
             datePickerFilter.TabIndex = 9;
+            datePickerFilter.Value = new DateTime(2025, 12, 25, 23, 59, 59, 0);
             // 
             // filterByPriority
             // 
