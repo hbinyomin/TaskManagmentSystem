@@ -23,6 +23,10 @@ namespace TaskManagmentSystem{
         }
 
         private void filterByDate_Click(object sender, EventArgs e) {
+            if (datePickerFilter.Format != DateTimePickerFormat.Long) {
+                // If the format has not been changed to Long, then user hasn't selected a value yet
+                return;
+            }
             DateTime dueDate = datePickerFilter.Value.Date;
             using (var context = new TaskDbContext()) {
                 var taskList = context.Tasks.Where(t => t.DueDate == dueDate).ToList();
@@ -32,6 +36,7 @@ namespace TaskManagmentSystem{
 
         private void clearFilterButton_Click(object sender, EventArgs e) {
             this.LoadTasks();
+            //Clear filter text use helper functino
         }
 
         private void deleteButton_Click(object sender, EventArgs e) {
@@ -67,6 +72,8 @@ namespace TaskManagmentSystem{
             tasksDataGridView1.ClearSelection();
         }
 
-       
+        private void datePickerFilter_ValueChanged(object sender, EventArgs e) {
+            datePickerFilter.Format = DateTimePickerFormat.Long;
+        }
     }
 }

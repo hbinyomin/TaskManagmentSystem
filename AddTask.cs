@@ -66,7 +66,6 @@ namespace TaskManagmentSystem {
 
         private void dueDatePicker1_ValueChanged(object sender, EventArgs e) {
             dueDatePicker1.Format = DateTimePickerFormat.Long;
-        
         }
     }
 }

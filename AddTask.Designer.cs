@@ -89,8 +89,8 @@ namespace TaskManagmentSystem {
             // 
             // dueDatePicker1
             // 
-            dueDatePicker1.CustomFormat = " ";
             dueDatePicker1.Format = DateTimePickerFormat.Custom;
+            dueDatePicker1.CustomFormat = " ";
             dueDatePicker1.Location = new Point(44, 201);
             dueDatePicker1.Name = "dueDatePicker1";
             dueDatePicker1.Size = new Size(200, 23);

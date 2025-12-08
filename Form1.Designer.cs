@@ -100,12 +100,15 @@ namespace TaskManagmentSystem
             // 
             // datePickerFilter
             // 
+            datePickerFilter.CustomFormat = " ";
+            datePickerFilter.Format = DateTimePickerFormat.Custom;
             datePickerFilter.Location = new Point(421, 112);
             datePickerFilter.MinDate = new DateTime(2025, 12, 1, 0, 0, 10, 0);
             datePickerFilter.Name = "datePickerFilter";
             datePickerFilter.Size = new Size(198, 23);
             datePickerFilter.TabIndex = 22;
             datePickerFilter.Value = new DateTime(2025, 12, 25, 23, 59, 59, 0);
+            datePickerFilter.ValueChanged += datePickerFilter_ValueChanged;
             // 
             // label4
             // 
