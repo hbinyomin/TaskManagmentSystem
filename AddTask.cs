@@ -10,12 +10,10 @@ using System.Windows.Forms;
 
 namespace TaskManagmentSystem {
     public partial class AddTaskForm : Form {
-        internal TaskListForm? mainForm;
+        internal TaskListForm mainForm;
 
-        public AddTaskForm() {
-            InitializeComponent();
-        }
-        public AddTaskForm(TaskListForm mainForm) : this() {
+      
+        public AddTaskForm(TaskListForm mainForm){
             this.mainForm = mainForm;
             InitializeComponent();
         }
