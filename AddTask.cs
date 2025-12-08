@@ -20,8 +20,12 @@ namespace TaskManagmentSystem {
             
                 string taskTitle = titleTextBox.Text;
                 string taskDescription = descriptionTextBox.Text;
+                DateTime date = dueDatePicker1.Value;
+                int priority = priorityComboBox1.SelectedIndex;
+
+
                 try {
-                    Task task = new Task(taskTitle,taskDescription);
+                    Task task = new Task(taskTitle:taskTitle,description:taskDescription,dueDate:date,priorityLevel:priority);
                     context.Tasks.Add(task);
                     int changes = context.SaveChanges();
 

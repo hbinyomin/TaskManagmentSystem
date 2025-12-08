@@ -5,6 +5,7 @@ namespace TaskManagmentSystem
             using (var context = new TaskDbContext()) {
                 var taskList = context.Tasks.ToList();
                 tasksDataGridView1.DataSource = taskList;
+                tasksDataGridView1.Columns["Id"]?.Visible = false;
             }
         }
         public TaskListForm() {

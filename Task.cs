@@ -21,9 +21,11 @@ namespace TaskManagmentSystem {
         public Task() {
         }
         //public Task(string taskTitle, string description, DateTime dueDate, int priorityLevel) {
-        public Task(string taskTitle, string description) {
+        public Task(string taskTitle, string description,DateTime dueDate, int priorityLevel) {
             this.Title = taskTitle;
             this.Description = description;
+            this.DueDate = dueDate.Date;
+            this.PriorityLevel = priorityLevel;
         }
 
 
