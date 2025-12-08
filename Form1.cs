@@ -54,14 +54,7 @@ namespace TaskManagmentSystem{
         private void editTaskButton_Click(object sender, EventArgs e) {
             var rowTask = tasksDataGridView1.CurrentRow?.DataBoundItem as Task;
             if (rowTask != null) {
-                new UpdateForm(this);
-                using (var context = new TaskDbContext()) {
-
-                    var taskList = context.Tasks.Remove(rowTask);
-                    context.SaveChanges();
-                    MessageBox.Show("Task was deleted successfully");
-                    LoadTasks();
-                }
+                new UpdateTaskForm(this,tasksDataGridView1).ShowDialog();
             }
         }
 

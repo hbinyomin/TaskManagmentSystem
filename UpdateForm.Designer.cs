@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 
 namespace TaskManagmentSystem {
-    partial class UpdateForm {
+    partial class UpdateTaskForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -108,13 +108,13 @@ namespace TaskManagmentSystem {
             // 
             // priorityComboBox1
             // 
-            priorityComboBox1.DataSource = new Priority[]
-    {
-    Priority.Low,
-    Priority.Medium,
-    Priority.High,
-    Priority.Critical
-    };
+            //priorityComboBox1.DataSource = new Priority[]
+    //{
+    //Priority.Low,
+    //Priority.Medium,
+    //Priority.High,
+    //Priority.Critical
+    //};
             priorityComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             priorityComboBox1.FormattingEnabled = true;
             priorityComboBox1.Items.AddRange(new object[] { Priority.Low, Priority.Medium, Priority.High, Priority.Critical });
@@ -123,7 +123,7 @@ namespace TaskManagmentSystem {
             priorityComboBox1.Size = new Size(200, 23);
             priorityComboBox1.TabIndex = 12;
             // 
-            // UpdateForm
+            // UpdateTaskForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -137,7 +137,7 @@ namespace TaskManagmentSystem {
             Controls.Add(titleTextBox);
             Controls.Add(label2);
             Controls.Add(updateTaskButton);
-            Name = "UpdateForm";
+            Name = "UpdateTaskForm";
             Text = "Update Task";
             ResumeLayout(false);
             PerformLayout();
