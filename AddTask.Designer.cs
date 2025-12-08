@@ -1,4 +1,6 @@
-﻿namespace TaskManagmentSystem {
+﻿using System.Windows.Forms;
+
+namespace TaskManagmentSystem {
     partial class AddTask {
         /// <summary>
         /// Required designer variable.
@@ -87,10 +89,13 @@
             // 
             // dueDatePicker1
             // 
+            dueDatePicker1.CustomFormat = " ";
+            dueDatePicker1.Format = DateTimePickerFormat.Custom;
             dueDatePicker1.Location = new Point(44, 201);
             dueDatePicker1.Name = "dueDatePicker1";
             dueDatePicker1.Size = new Size(200, 23);
             dueDatePicker1.TabIndex = 10;
+            dueDatePicker1.ValueChanged += dueDatePicker1_ValueChanged;
             // 
             // dueDateLabel
             // 

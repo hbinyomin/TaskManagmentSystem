@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,15 +18,33 @@ namespace TaskManagmentSystem {
 
         private void addTaskButton_Click(object sender, EventArgs e) {
             using (var context = new TaskDbContext()) {
-            
-                string taskTitle = titleTextBox.Text;
-                string taskDescription = descriptionTextBox.Text;
+
+                string? taskTitle = string.IsNullOrWhiteSpace(titleTextBox.Text) ? null : titleTextBox.Text;
+                string? taskDescription = string.IsNullOrWhiteSpace(descriptionTextBox.Text) ? null : descriptionTextBox.Text;
                 DateTime date = dueDatePicker1.Value;
                 int priority = priorityComboBox1.SelectedIndex;
 
+                if (taskTitle == null) {
+                    MessageBox.Show("You must assign a title to a task");
+                    return;
+                }
+                if (taskDescription == null) {
+                    MessageBox.Show("You must assign a description to a task");
+                    return;
+                }
+
+                if (priority < 0) {
+                    MessageBox.Show("You must assign a priority to a task");
+                    return;
+                }
+                if (dueDatePicker1.Format == DateTimePickerFormat.Custom) {
+                    //Indicates that user didn't select a date yet
+                    MessageBox.Show("You must assign a date to a task");
+                    return;
+                }
 
                 try {
-                    Task task = new Task(taskTitle:taskTitle,description:taskDescription,dueDate:date,priorityLevel:priority);
+                    Task task = new Task(taskTitle: taskTitle, description: taskDescription, dueDate: date, priorityLevel: priority);
                     context.Tasks.Add(task);
                     int changes = context.SaveChanges();
 
@@ -35,12 +54,17 @@ namespace TaskManagmentSystem {
                         this.Close();
                     }
                 }
-                catch (SqlException ex) {
-                    MessageBox.Show("An error occured while processing your request.p\n" + ex.Message);
+                catch (DbUpdateException ex) {
+                    MessageBox.Show("Sorry, an unexpected error happened.\n" + ex.Message);
                 }
 
 
             }
+        }
+
+        private void dueDatePicker1_ValueChanged(object sender, EventArgs e) {
+            dueDatePicker1.Format = DateTimePickerFormat.Long;
+        
         }
     }
 }
