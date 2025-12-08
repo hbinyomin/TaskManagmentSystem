@@ -9,9 +9,13 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace TaskManagmentSystem {
-    public partial class AddTask : Form {
-        TaskListForm mainForm;
-        public AddTask(TaskListForm mainForm) {
+    public partial class AddTaskForm : Form {
+        internal TaskListForm? mainForm;
+
+        public AddTaskForm() {
+            InitializeComponent();
+        }
+        public AddTaskForm(TaskListForm mainForm) : this() {
             this.mainForm = mainForm;
             InitializeComponent();
         }
@@ -23,6 +27,8 @@ namespace TaskManagmentSystem {
                 string? taskDescription = string.IsNullOrWhiteSpace(descriptionTextBox.Text) ? null : descriptionTextBox.Text;
                 DateTime date = dueDatePicker1.Value;
 
+
+                // break this out into helper function - validate data
                 if (taskTitle == null) {
                     MessageBox.Show("You must assign a title to a task");
                     return;

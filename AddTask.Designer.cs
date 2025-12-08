@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 
 namespace TaskManagmentSystem {
-    partial class AddTask {
+    partial class AddTaskForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -117,7 +117,7 @@ namespace TaskManagmentSystem {
             priorityComboBox1.Size = new Size(200, 23);
             priorityComboBox1.TabIndex = 12;
             // 
-            // AddTask
+            // AddTaskForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -131,8 +131,8 @@ namespace TaskManagmentSystem {
             Controls.Add(titleTextBox);
             Controls.Add(label2);
             Controls.Add(addTaskButton);
-            Name = "AddTask";
-            Text = "AddTask";
+            Name = "AddTaskForm";
+            Text = "AddTaskForm";
             ResumeLayout(false);
             PerformLayout();
         }
