@@ -15,6 +15,7 @@ namespace TaskManagmentSystem{
 
         private void filterByPriority_Click(object sender, EventArgs e) {
             Priority priority = (Priority)priorityPickerFilter.SelectedIndex;
+
             using (var context = new TaskDbContext()) {
                 var taskList = context.Tasks.Where(t => t.PriorityLevel == priority).ToList();
                 loadGrid(tasksDataGridView1, taskList);
@@ -66,8 +67,6 @@ namespace TaskManagmentSystem{
             tasksDataGridView1.ClearSelection();
         }
 
-        private void tasksDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {
-
-        }
+       
     }
 }
